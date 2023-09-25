@@ -1,0 +1,20 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Deploy files to server
+      run: |
+        scp -r /dist/* user@${{APPLE_HOST}}:${{APPLE_LOCATION}}
+      env:
+        SSH_PASSWORD: ${{ APPLE_PASSWORD }}
