@@ -10,6 +10,7 @@ jobs:
   build:
     # 运行环境
     runs-on: ubuntu-latest
+    container: node:16.16.0
     # 步骤
     steps:
     # 使用别人的action
