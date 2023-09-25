@@ -15,6 +15,6 @@ jobs:
 
     - name: Deploy files to server
       run: |
-        scp -r /dist/* user@${{APPLE_HOST}}:${{APPLE_LOCATION}}
+        scp -r /dist/* user@${{secrets.APPLE_HOST}}:${{secrets.APPLE_LOCATION}}
       env:
-        SSH_PASSWORD: ${{ APPLE_PASSWORD }}
+        SSH_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
