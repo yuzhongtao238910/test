@@ -33,4 +33,4 @@ jobs:
         pass: ${{ secrets.APPLE_PASSWORD }}
         connect_timeout: 10s
         local: './dist/*'
-        remote: ${{APPLE_LOCATION}}
+        remote: ${{secrets.APPLE_LOCATION}}
